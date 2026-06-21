@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TeluguBrew — NRI Diaspora Hub</title>
-<meta name="description" content="Visa bulletins, US market recaps, career signals, and community updates — built for Telugu NRIs. A TeluguBrew vertical.">
-<meta property="og:title" content="TeluguBrew NRI Diaspora Hub — Visa. Markets. Careers. Community.">
-<meta property="og:description" content="Everything a Telugu NRI needs — immigration updates, US markets, tech careers, and community. No noise, no fluff.">
+<meta name="description" content="US markets, investment confessions, visa bulletins, career signals — built for Telugu NRIs. A TeluguBrew vertical.">
+<meta property="og:title" content="TeluguBrew NRI Diaspora Hub — Markets. Confessions. Visa. Careers.">
+<meta property="og:description" content="Everything a Telugu NRI needs — US markets, real investment stories, immigration updates, tech careers. No noise, no fluff.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
@@ -15,7 +15,7 @@
   --bg:#0D0D1A;--surface:#141428;--mango:#FF6B35;--teal:#00C9A7;
   --text:#EAEAF2;--text-light:#A0A0B8;--text-dim:#5A5A7A;
   --border:rgba(255,255,255,0.06);--glow:rgba(255,107,53,0.15);
-  --green:#34D399;--gold:#FFB347;
+  --green:#34D399;--gold:#FFB347;--purple:#818CF8;--pink:#F472B6;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
@@ -65,6 +65,16 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .region-card .name{font-size:15px;font-weight:700;margin-top:6px}
 .region-card .status{font-size:11px;font-weight:600;margin-top:3px}
 .divider{border:none;border-top:1px solid var(--border);margin:0}
+/* Confession highlight */
+.confession-highlight{background:linear-gradient(135deg,rgba(255,107,53,0.08),rgba(129,140,248,0.08));border:1px solid rgba(255,107,53,0.25);border-radius:16px;padding:36px 28px;text-align:center;max-width:640px;margin:0 auto}
+.confession-highlight h3{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;margin-bottom:10px}
+.confession-highlight .tagline{font-size:15px;color:var(--text-light);line-height:1.5;margin-bottom:20px}
+.confession-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.confession-tag{font-size:12px;font-weight:600;padding:5px 14px;border-radius:16px;border:1px solid}
+/* Social row */
+.social-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.social-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;transition:border-color 0.2s,background 0.2s}
+.social-link:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.25)}
 footer{border-top:1px solid var(--border);padding:28px;text-align:center}
 footer p{font-size:13px;color:var(--text-dim)}
 footer .logo-footer{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:7px}
@@ -83,6 +93,7 @@ footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
   .region-row{gap:10px}
   .region-card{padding:16px 20px;min-width:100px}
   .container{padding:0 16px}
+  .confession-highlight{padding:28px 20px}
 }
 </style>
 </head>
@@ -120,7 +131,7 @@ footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
     <span>USA Edition — Live Now</span>
   </div>
   <h1>NRI Diaspora <span class="gradient">Hub</span></h1>
-  <p class="sub">Visa bulletins. Market moves. Career signals. Community updates. Everything a Telugu NRI needs — no noise, no fluff.</p>
+  <p class="sub">US markets. Investment confessions. Visa bulletins. Career signals. Everything a Telugu NRI needs — no noise, no fluff.</p>
   <div class="cta-row" id="nri-cta">
     <input type="email" class="cta-input" placeholder="you@email.com" id="nri-email">
     <button class="cta-btn" onclick="handleSubscribe()">Get Updates</button>
@@ -128,11 +139,12 @@ footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
   <p class="cta-fine">Free. No spam. Unsubscribe anytime.</p>
 </section>
 
+<!-- Pillars — reordered: Markets > Confessions > Visa > News/Tech > Community -->
 <section style="padding:40px 0 72px">
   <div class="container">
     <div class="sec-head">
       <span class="badge badge-s">What We Cover</span>
-      <h2>Four Pillars. Zero Fluff.</h2>
+      <h2>Five Pillars. Zero Fluff.</h2>
       <p>Everything an NRI actually needs — updated daily, explained the way our generation talks.</p>
     </div>
     <div class="tab-row" id="tabs"></div>
@@ -142,6 +154,30 @@ footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
 
 <hr class="divider">
 
+<!-- Investment Confessions Spotlight -->
+<section style="padding:48px 0 72px">
+  <div class="container">
+    <div class="sec-head">
+      <span class="badge" style="color:#818CF8;background:rgba(129,140,248,0.1)">NEW SERIES</span>
+      <h2>Investment Confessions</h2>
+      <p>Real stories from real investors. The risks taken, the mistakes made, the lessons learned.</p>
+    </div>
+    <div class="confession-highlight">
+      <h3>🎙️ Your Money. Your Story.</h3>
+      <p class="tagline">We all have that one trade, that one bet, that one moment. Investment Confessions is where NRIs share the unfiltered truth — the foolish moves, the calculated risks, the long-term bets that paid off (or didn't).</p>
+      <div class="confession-tags">
+        <span class="confession-tag" style="color:#E05555;border-color:rgba(224,85,85,0.4)">😬 Biggest Mistakes</span>
+        <span class="confession-tag" style="color:#5DCAA5;border-color:rgba(93,202,165,0.4)">📈 Long-Term Wins</span>
+        <span class="confession-tag" style="color:#FFB347;border-color:rgba(255,179,71,0.4)">🎲 Risky Bets</span>
+        <span class="confession-tag" style="color:#818CF8;border-color:rgba(129,140,248,0.4)">💡 Lessons Learned</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Upcoming -->
 <section style="padding:40px 0 72px">
   <div class="container">
     <div class="sec-head">
@@ -155,6 +191,7 @@ footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
 
 <hr class="divider">
 
+<!-- Regions -->
 <section style="padding:40px 0 72px">
   <div class="container">
     <div class="sec-head">
@@ -166,37 +203,60 @@ footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
   </div>
 </section>
 
+<hr class="divider">
+
+<!-- Follow — NRI specific Instagram -->
+<section style="padding:48px 0 72px">
+  <div class="container" style="text-align:center">
+    <div class="sec-head">
+      <span class="badge badge-s">Stay Connected</span>
+      <h2>Follow TeluguBrew NRI</h2>
+      <p>Daily updates on markets, visas, careers, and investment confessions.</p>
+    </div>
+    <div class="social-row">
+      <a href="https://instagram.com/telugubrewnri" target="_blank" class="social-link">📸 @TeluguBrewNRI</a>
+      <a href="https://instagram.com/telugubrew" target="_blank" class="social-link">📸 @TeluguBrew</a>
+      <a href="#" class="social-link">▶️ YouTube</a>
+      <a href="#" class="social-link">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="logo-footer">
     <svg width="28" height="24" aria-label="TeluguBrew"><use href="#tb-logo"/></svg>
     Telugu<span>Brew</span>
   </div>
-  <p>Markets. Movies. News. Culture. <strong style="color:var(--mango)">NRI Diaspora.</strong></p>
+  <p>Markets. Confessions. Visa. Careers. <strong style="color:var(--mango)">NRI Diaspora.</strong></p>
   <p class="disclaimer">Educational content only. Not financial, legal, or immigration advice. Consult licensed professionals.</p>
   <p style="margin-top:8px;font-size:12px;opacity:0.4">© 2026 TeluguBrew. All rights reserved.</p>
 </footer>
 
 <script>
+// Pillars — reordered: Markets, Confessions, Visa, News/Tech, Community
 var PILLARS = [
+  { icon:"\u{1F4C8}", title:"US Markets & Money", tag:"MARKET BANDI NRI",
+    desc:"US market recaps through an NRI lens. S&P 500, Nasdaq daily wraps. 401(k), IRA, HSA strategies. NRI tax planning. India\u2013US remittance optimization.",
+    items:["Daily US market recaps","NRI tax planning guides","Remittance rate tracker","Real estate: US vs India ROI","401(k) & IRA strategy breakdowns"] },
+  { icon:"\u{1F399}\u{FE0F}", title:"Investment Confessions", tag:"CONFESSIONS",
+    desc:"Real stories from real NRI investors. The foolish trades, the calculated risks, the long-term bets, and the lessons nobody talks about. Anonymous or named \u2014 your call.",
+    items:["Biggest investing mistakes","Long-term bets that paid off","Risks that went wrong","Lessons learned the hard way","Community-submitted stories"] },
   { icon:"\u{1F6C2}", title:"Visa & Immigration", tag:"VISA BULLETIN",
     desc:"EB-1, EB-2, EB-3, EB-5 priority date tracking. H-1B, L-1, green card updates. Policy changes decoded \u2014 no legalese.",
     items:["Monthly visa bulletin breakdowns","Priority date movement analysis","USCIS processing time alerts","Immigration policy impact reports"] },
-  { icon:"\u{1F4C8}", title:"US Markets & Money", tag:"MARKET BANDI NRI",
-    desc:"US market recaps through an NRI lens. 401(k), IRA, HSA strategies. NRI tax planning. India\u2013US remittance optimization.",
-    items:["S&P 500 & Nasdaq daily wraps","NRI tax planning guides","Remittance rate tracker","Real estate: US vs India ROI"] },
-  { icon:"\u{1F4BC}", title:"Careers & Tech", tag:"TECH RADAR",
-    desc:"In-demand tech stacks and certs. AI and emerging tech decoded. Job market signals for visa holders. Salary benchmarking by metro.",
-    items:["Weekly tech stack trends","AI & GenAI career playbooks","H-1B job market signals","Upskilling roadmaps"] },
+  { icon:"\u{1F4BB}", title:"News, AI & Tech", tag:"TECH RADAR",
+    desc:"In-demand tech stacks and certs. AI and emerging tech decoded. Job market signals for visa holders. Salary benchmarking by metro and visa type.",
+    items:["Weekly tech stack trends","AI & GenAI career playbooks","H-1B job market signals","Upskilling roadmaps","Emerging tech deep dives"] },
   { icon:"\u{1F91D}", title:"NRI Life & Community", tag:"COMMUNITY",
     desc:"Telugu events across US metros. Diaspora milestones and stories. Community resources and directories. First-gen financial playbooks.",
     items:["Metro-wise event calendars","NRI milestone guides","Diaspora success stories","Community resource directories"] }
 ];
 var UPCOMING = [
-  { label:"July Visa Bulletin Analysis", tag:"IMMIGRATION", color:"#FF6B35" },
-  { label:"H-1B FY2027 Lottery Results Tracker", tag:"VISA", color:"#34D399" },
+  { label:"S&P 500 Weekly Wrap \u2014 NRI Edition", tag:"MARKETS", color:"#FF6B35" },
+  { label:"Investment Confessions: Episode 1", tag:"CONFESSIONS", color:"#818CF8" },
+  { label:"July Visa Bulletin Analysis", tag:"IMMIGRATION", color:"#34D399" },
   { label:"NRI Tax Filing Checklist \u2014 2026", tag:"FINANCE", color:"#FFB347" },
-  { label:"Top 10 AI Certifications Worth Your Time", tag:"CAREERS", color:"#818CF8" },
-  { label:"US Telugu Conventions \u2014 Fall Calendar", tag:"COMMUNITY", color:"#F472B6" }
+  { label:"Top 10 AI Certifications Worth Your Time", tag:"CAREERS", color:"#F472B6" }
 ];
 var REGIONS = [
   { flag:"\u{1F1FA}\u{1F1F8}", name:"USA", live:true },
