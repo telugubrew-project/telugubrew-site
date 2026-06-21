@@ -1,7 +1,4 @@
 {
-  "version": 2,
-  "name": "telugubrew",
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
