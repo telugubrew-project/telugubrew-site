@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TeluguBrew — NRI Diaspora Hub</title>
+<meta name="description" content="Visa bulletins, US market recaps, career signals, and community updates — built for Telugu NRIs. A TeluguBrew vertical.">
+<meta property="og:title" content="TeluguBrew NRI Diaspora Hub — Visa. Markets. Careers. Community.">
+<meta property="og:description" content="Everything a Telugu NRI needs — immigration updates, US markets, tech careers, and community. No noise, no fluff.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D0D1A;--surface:#141428;--mango:#FF6B35;--teal:#00C9A7;
+  --text:#EAEAF2;--text-light:#A0A0B8;--text-dim:#5A5A7A;
+  --border:rgba(255,255,255,0.06);--glow:rgba(255,107,53,0.15);
+  --green:#34D399;--gold:#FFB347;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(255,107,53,0.3)}
+a{color:inherit;text-decoration:none}
+
+/* Nav — identical to index.html */
+nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 32px;border-bottom:1px solid var(--border);background:rgba(13,13,26,0.92);backdrop-filter:blur(12px)}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo span{color:var(--mango)}
+.nav-links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.nav-link{padding:6px 14px;border-radius:6px;border:none;font-size:13px;font-weight:500;cursor:pointer;background:transparent;color:var(--text-light);transition:all 0.2s;font-family:inherit;text-decoration:none}
+.nav-link:hover{color:var(--text)}
+.nav-link.active{background:var(--mango);color:var(--bg);font-weight:700}
+
+/* Hero */
+.hero{text-align:center;padding:72px 24px 56px;max-width:780px;margin:0 auto;position:relative;animation:fadeUp 0.55s ease both}
+.hero::before{content:'';position:absolute;top:-60px;left:50%;width:800px;height:500px;background:radial-gradient(circle,rgba(255,107,53,0.06) 0%,transparent 70%);transform:translateX(-50%);pointer-events:none}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,48px);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin-bottom:16px}
+.gradient{background:linear-gradient(135deg,var(--mango),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:17px;color:var(--text-light);max-width:520px;margin:0 auto 32px;line-height:1.6}
+
+/* Live badge */
+.live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:20px;padding:5px 16px;margin-bottom:20px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+.live-badge span{font-size:12px;font-weight:600;color:var(--green)}
+
+/* Badges */
+.badge{font-size:11px;font-weight:700;letter-spacing:0.08em;padding:3px 10px;border-radius:4px;text-transform:uppercase;display:inline-block}
+.badge-s{color:var(--mango);background:rgba(255,107,53,0.1)}
+.badge-g{color:var(--green);background:rgba(52,211,153,0.1)}
+
+/* Section headings */
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head h2{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;margin:12px 0 8px;line-height:1.2;letter-spacing:-0.02em}
+.sec-head p{font-size:15px;color:var(--text-light);max-width:500px;margin:0 auto;line-height:1.5}
+
+/* CTA row */
+.cta-row{display:flex;gap:8px;justify-content:center;max-width:420px;margin:0 auto}
+.cta-input{flex:1;padding:11px 14px;border-radius:8px;border:1px solid var(--border);background:rgba(20,20,40,0.8);color:var(--text);font-size:14px;outline:none;font-family:inherit}
+.cta-input:focus{border-color:var(--mango)}
+.cta-btn{padding:11px 22px;border-radius:8px;border:none;background:var(--mango);color:var(--bg);font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;font-family:inherit;transition:opacity 0.2s}
+.cta-btn:hover{opacity:0.9}
+.cta-success{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:13px 24px;font-size:14px;color:var(--green);font-weight:500;width:100%;text-align:center}
+.cta-fine{font-size:11px;color:var(--text-dim);margin-top:12px;text-align:center}
+
+/* Cards */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all 0.25s ease}
+.card:hover{border-color:var(--glow);transform:translateY(-2px)}
+
+/* Pillar tabs */
+.tab-row{display:flex;justify-content:center;gap:6px;margin-bottom:28px;flex-wrap:wrap}
+.tab-btn{padding:7px 18px;border-radius:18px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit;background:rgba(255,255,255,0.04);color:var(--text-light)}
+.tab-btn.active{background:var(--mango);color:var(--bg)}
+.pillar-card{max-width:600px;margin:0 auto}
+.pillar-card h3{font-size:20px;font-weight:700;margin-top:5px}
+.pillar-card .desc{font-size:14px;color:var(--text-light);line-height:1.6;margin:14px 0 18px}
+.pillar-item{display:flex;align-items:center;gap:9px;font-size:13.5px;opacity:0.88;margin-bottom:7px}
+.pillar-dot{width:5px;height:5px;border-radius:50%;background:var(--mango);flex-shrink:0}
+
+/* Grid */
+.content-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;max-width:680px;margin:0 auto}
+
+/* Regions */
+.region-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.region-card{padding:22px 32px;text-align:center;min-width:120px}
+.region-card .flag{font-size:32px}
+.region-card .name{font-size:15px;font-weight:700;margin-top:6px}
+.region-card .status{font-size:11px;font-weight:600;margin-top:3px}
+
+/* Divider */
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:28px;text-align:center}
+footer p{font-size:13px;color:var(--text-dim)}
+footer .logo-footer{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:7px}
+footer .logo-footer span{color:var(--mango)}
+footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+
+/* Container */
+.container{max-width:880px;margin:0 auto;padding:0 28px}
+
+@media(max-width:640px){
+  nav{padding:12px 16px;flex-direction:column;gap:10px}
+  .nav-links{justify-content:center}
+  .hero h1{font-size:32px}
+  .cta-row{flex-direction:column}
+  .tab-row{gap:4px}
+  .tab-btn{font-size:12px;padding:6px 12px}
+  .region-row{gap:10px}
+  .region-card{padding:16px 20px;min-width:100px}
+  .container{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG Logo Symbol (same as index.html) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <symbol id="tb-logo" viewBox="0 0 140 120">
+      <path d="M 15 75 Q 15 100 35 100 L 85 100 Q 105 100 105 75 L 105 40 L 15 40 Z" fill="none" stroke="#FF6B35" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M 105 50 Q 125 50 125 68 Q 125 86 105 83" fill="none" stroke="#FF6B35" stroke-width="7" stroke-linecap="round"/>
+      <polygon points="48,55 48,80 76,67.5" fill="#FFF8F0"/>
+      <line x1="30" y1="5" x2="30" y2="28" stroke="#5DCAA5" stroke-width="3.5"/><rect x="25" y="11" width="10" height="8" fill="#5DCAA5" rx="1"/>
+      <line x1="50" y1="0" x2="50" y2="25" stroke="#E05555" stroke-width="3.5"/><rect x="45" y="7" width="10" height="8" fill="#E05555" rx="1"/>
+      <line x1="70" y1="3" x2="70" y2="27" stroke="#5DCAA5" stroke-width="3.5"/><rect x="65" y="9" width="10" height="8" fill="#5DCAA5" rx="1"/>
+      <line x1="90" y1="6" x2="90" y2="28" stroke="#E05555" stroke-width="3.5"/><rect x="85" y="12" width="10" height="8" fill="#E05555" rx="1"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Nav — matches index.html, with NRI Diaspora active -->
+<nav>
+  <a href="index.html" class="logo">
+    <svg width="36" height="30" aria-label="TeluguBrew logo"><use href="#tb-logo"/></svg>
+    Telugu<span>Brew</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="index.html#follow" class="nav-link">Follow Us</a>
+    <a href="nri.html" class="nav-link active">🌏 NRI Diaspora</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="live-badge">
+    <span class="live-dot"></span>
+    <span>USA Edition — Live Now</span>
+  </div>
+  <h1>NRI Diaspora <span class="gradient">Hub</span></h1>
+  <p class="sub">Visa bulletins. Market moves. Career signals. Community updates. Everything a Telugu NRI needs — no noise, no fluff.</p>
+
+  <div class="cta-row" id="nri-cta">
+    <input type="email" class="cta-input" placeholder="you@email.com" id="nri-email">
+    <button class="cta-btn" onclick="handleSubscribe()">Get Updates</button>
+  </div>
+  <p class="cta-fine">Free. No spam. Unsubscribe anytime.</p>
+</section>
+
+<!-- Pillars -->
+<section style="padding:40px 0 72px">
+  <div class="container">
+    <div class="sec-head">
+      <span class="badge badge-s">What We Cover</span>
+      <h2>Four Pillars. Zero Fluff.</h2>
+      <p>Everything an NRI actually needs — updated daily, explained the way our generation talks.</p>
+    </div>
+    <div class="tab-row" id="tabs"></div>
+    <div class="card pillar-card" id="pillar-detail"></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Upcoming -->
+<section style="padding:40px 0 72px">
+  <div class="container">
+    <div class="sec-head">
+      <span class="badge badge-s">Coming Up</span>
+      <h2>On Deck This Month</h2>
+      <p>Here's what we're brewing next.</p>
+    </div>
+    <div class="content-grid" id="upcoming"></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Regions -->
+<section style="padding:40px 0 72px">
+  <div class="container">
+    <div class="sec-head">
+      <span class="badge badge-s">Global Rollout</span>
+      <h2>Starting With the US. Expanding Everywhere.</h2>
+      <p>Built to scale across every major Telugu diaspora market.</p>
+    </div>
+    <div class="region-row" id="regions"></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="logo-footer">
+    <svg width="28" height="24" aria-label="TeluguBrew"><use href="#tb-logo"/></svg>
+    Telugu<span>Brew</span>
+  </div>
+  <p>Markets. Movies. News. Culture. <strong style="color:var(--mango)">NRI Diaspora.</strong></p>
+  <p class="disclaimer">Educational content only. Not financial, legal, or immigration advice. Consult licensed professionals.</p>
+  <p style="margin-top:8px;font-size:12px;opacity:0.4">© 2026 TeluguBrew. All rights reserved.</p>
+</footer>
+
+<script>
+// ─── Data ───
+const PILLARS = [
+  { icon:"🛂", title:"Visa & Immigration", tag:"VISA BULLETIN",
+    desc:"EB-1, EB-2, EB-3, EB-5 priority date tracking. H-1B, L-1, green card updates. Policy changes decoded — no legalese.",
+    items:["Monthly visa bulletin breakdowns","Priority date movement analysis","USCIS processing time alerts","Immigration policy impact reports"] },
+  { icon:"📈", title:"US Markets & Money", tag:"MARKET BANDI NRI",
+    desc:"US market recaps through an NRI lens. 401(k), IRA, HSA strategies. NRI tax planning. India–US remittance optimization.",
+    items:["S&P 500 & Nasdaq daily wraps","NRI tax planning guides","Remittance rate tracker","Real estate: US vs India ROI"] },
+  { icon:"💼", title:"Careers & Tech", tag:"TECH RADAR",
+    desc:"In-demand tech stacks and certs. AI and emerging tech decoded. Job market signals for visa holders. Salary benchmarking by metro.",
+    items:["Weekly tech stack trends","AI & GenAI career playbooks","H-1B job market signals","Upskilling roadmaps"] },
+  { icon:"🤝", title:"NRI Life & Community", tag:"COMMUNITY",
+    desc:"Telugu events across US metros. Diaspora milestones and stories. Community resources and directories. First-gen financial playbooks.",
+    items:["Metro-wise event calendars","NRI milestone guides","Diaspora success stories","Community resource directories"] }
+];
+
+const UPCOMING = [
+  { label:"July Visa Bulletin Analysis", tag:"IMMIGRATION", color:"#FF6B35" },
+  { label:"H-1B FY2027 Lottery Results Tracker", tag:"VISA", color:"#34D399" },
+  { label:"NRI Tax Filing Checklist — 2026", tag:"FINANCE", color:"#FFB347" },
+  { label:"Top 10 AI Certifications Worth Your Time", tag:"CAREERS", color:"#818CF8" },
+  { label:"US Telugu Conventions — Fall Calendar", tag:"COMMUNITY", color:"#F472B6" }
+];
+
+const REGIONS = [
+  { flag:"🇺🇸", name:"USA", live:true },
+  { flag:"🇬🇧", name:"UK", live:false },
+  { flag:"🇨🇦", name:"Canada", live:false },
+  { flag:"🇦🇺", name:"Australia", live:false }
+];
+
+// ─── Subscribe ───
+function handleSubscribe() {
+  var input = document.getElementById('nri-email');
+  if (!input || !input.value.includes('@')) return;
+  document.getElementById('nri-cta').innerHTML = '<div class="cta-success">You\'re on the list. We\'ll keep you posted. ☕</div>';
+}
+
+// ─── Pillar tabs ───
+var activeTab = 0;
+
+function renderPillar(idx) {
+  activeTab = idx;
+  var p = PILLARS[idx];
+  document.getElementById('tabs').innerHTML = PILLARS.map(function(pl, i) {
+    return '<button class="tab-btn' + (i === idx ? ' active' : '') + '" onclick="renderPillar(' + i + ')">' + pl.icon + ' ' + pl.title + '</button>';
+  }).join('');
+  document.getElementById('pillar-detail').innerHTML =
+    '<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">' +
+      '<span style="font-size:26px">' + p.icon + '</span>' +
+      '<div><span class="badge badge-s">' + p.tag + '</span><h3>' + p.title + '</h3></div>' +
+    '</div>' +
+    '<p class="desc">' + p.desc + '</p>' +
+    p.items.map(function(item) {
+      return '<div class="pillar-item"><span class="pillar-dot"></span>' + item + '</div>';
+    }).join('');
+}
+
+// ─── Upcoming ───
+document.getElementById('upcoming').innerHTML = UPCOMING.map(function(u) {
+  return '<div class="card" style="padding:18px">' +
+    '<span class="badge" style="color:' + u.color + ';background:' + u.color + '18">' + u.tag + '</span>' +
+    '<p style="font-size:14px;font-weight:600;margin-top:9px;line-height:1.35">' + u.label + '</p>' +
+  '</div>';
+}).join('');
+
+// ─── Regions ───
+document.getElementById('regions').innerHTML = REGIONS.map(function(r) {
+  return '<div class="card region-card"' + (r.live ? ' style="border-color:rgba(52,211,153,0.2)"' : '') + '>' +
+    '<div class="flag">' + r.flag + '</div>' +
+    '<p class="name">' + r.name + '</p>' +
+    '<p class="status" style="color:' + (r.live ? 'var(--green)' : 'var(--text-dim)') + '">' + (r.live ? 'Live' : 'Coming Soon') + '</p>' +
+  '</div>';
+}).join('');
+
+// ─── Init ───
+renderPillar(0);
+</script>
+</body>
+</html>

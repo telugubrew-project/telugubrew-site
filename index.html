@@ -4,263 +4,179 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TeluguBrew — Markets. Movies. News. Culture.</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 124 124'%3E%3Crect width='124' height='124' rx='28' fill='%231A1A40'/%3E%3Cg transform='translate(-143.6,-53.75) scale(0.624)'%3E%3Cpath d='M 245 235 Q 245 263 273 263 L 350 263 Q 378 263 378 235 L 378 165 L 245 165 Z' fill='none' stroke='%23FF6B35' stroke-width='9' stroke-linejoin='round'/%3E%3Cpath d='M 378 179 Q 405 179 405 203 Q 405 227 378 224' fill='none' stroke='%23FF6B35' stroke-width='9' stroke-linecap='round'/%3E%3Cpolygon points='298,196 298,232 327,214' fill='%23FFF8F0'/%3E%3Cg transform='translate(263.6,118)'%3E%3Cline x1='6' y1='0' x2='6' y2='28' stroke='%235DCAA5' stroke-width='5'/%3E%3Crect x='0' y='8' width='12' height='11' fill='%235DCAA5' rx='1.5'/%3E%3C/g%3E%3Cg transform='translate(291.6,108)'%3E%3Cline x1='6' y1='0' x2='6' y2='32' stroke='%23E27878' stroke-width='5'/%3E%3Crect x='0' y='9' width='12' height='14' fill='%23E27878' rx='1.5'/%3E%3C/g%3E%3Cg transform='translate(319.6,112)'%3E%3Cline x1='6' y1='0' x2='6' y2='29' stroke='%235DCAA5' stroke-width='5'/%3E%3Crect x='0' y='6' width='12' height='13' fill='%235DCAA5' rx='1.5'/%3E%3C/g%3E%3Cg transform='translate(347.6,121)'%3E%3Cline x1='6' y1='0' x2='6' y2='24' stroke='%235DCAA5' stroke-width='5'/%3E%3Crect x='0' y='9' width='12' height='7' fill='%235DCAA5' rx='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
-<meta name="description" content="TeluguBrew delivers daily News, market updates, film reviews, and cultural insights for the newer generations. Your daily brew of Markets, Movies, News & More.">
-<meta property="og:title" content="TeluguBrew — Your Daily Brew of Markets, Movies, News & More">
-<meta property="og:description" content="Daily News, market updates, film reviews, and cultural insights — built for the newer generations.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://telugubrew.com">
+<meta name="description" content="TeluguBrew delivers daily News, market updates, film reviews, and cultural insights for the newer generations. Know What's Brewing Around.">
+<meta property="og:title" content="TeluguBrew — Your Daily Brew of Markets, Movies & More">
+<meta property="og:description" content="Daily market updates, film reviews, news and culture — built for the newer generations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---indigo:#1A1A40;
---mango:#FF6B35;
---cream:#FFF8F0;
---teal:#00C9A7;
---dark:#0D0D24;
---text-light:rgba(255,255,255,0.75);
---text-dim:rgba(255,255,255,0.5);
+  --bg:#0D0D1A;--surface:#141428;--mango:#FF6B35;--teal:#00C9A7;
+  --text:#EAEAF2;--text-light:#A0A0B8;--text-dim:#5A5A7A;
+  --border:rgba(255,255,255,0.06);--glow:rgba(255,107,53,0.15);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(255,107,53,0.3)}
+a{color:inherit;text-decoration:none}
 
-.container{max-width:720px;margin:0 auto;padding:0 24px}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(13,13,36,0.85);border-bottom:1px solid rgba(255,255,255,0.06)}
-.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.5px;color:#fff}
+/* Nav */
+nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 32px;border-bottom:1px solid var(--border);background:rgba(13,13,26,0.92);backdrop-filter:blur(12px)}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
 .logo span{color:var(--mango)}
-nav a.cta-nav{font-size:13px;padding:8px 18px;background:var(--mango);color:var(--indigo);border-radius:100px;text-decoration:none;font-weight:600;transition:transform 0.2s}
-nav a.cta-nav:hover{transform:scale(1.05)}
+.nav-links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.nav-link{padding:6px 14px;border-radius:6px;border:none;font-size:13px;font-weight:500;cursor:pointer;background:transparent;color:var(--text-light);transition:all 0.2s;font-family:inherit;text-decoration:none}
+.nav-link:hover{color:var(--text)}
+.nav-link.highlight{border:1px solid var(--mango);color:var(--mango);font-weight:600}
+.nav-link.highlight:hover{background:var(--mango);color:var(--bg)}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px 80px;position:relative}
-.hero::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,53,0.12) 0%,transparent 70%);transform:translate(-50%,-50%);pointer-events:none}
-.badge{display:inline-block;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--mango);border:1px solid rgba(255,107,53,0.3);padding:6px 16px;border-radius:100px;margin-bottom:28px}
-.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,7vw,64px);font-weight:700;line-height:1.1;letter-spacing:-2px;margin-bottom:12px}
-.hero h1 .mango{color:var(--mango)}
-.hero p{font-size:17px;color:var(--text-light);max-width:520px;line-height:1.7;margin-bottom:40px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--mango);color:var(--indigo);font-weight:600;font-size:15px;border-radius:100px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,107,53,0.3)}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border:1px solid rgba(255,255,255,0.2);color:#fff;font-weight:500;font-size:15px;border-radius:100px;text-decoration:none;transition:border-color 0.2s}
-.btn-secondary:hover{border-color:rgba(255,255,255,0.5)}
+/* Hero */
+.hero{text-align:center;padding:100px 24px 80px;position:relative}
+.hero::before{content:'';position:absolute;top:-60px;left:50%;width:800px;height:500px;background:radial-gradient(circle,rgba(255,107,53,0.06) 0%,transparent 70%);transform:translateX(-50%);pointer-events:none}
+.badge{display:inline-block;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(0,201,167,0.25);padding:6px 16px;border-radius:100px;margin-bottom:24px}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:16px}
+.mango{color:var(--mango)}
+.hero>p{font-size:17px;color:var(--text-light);max-width:520px;margin:0 auto;line-height:1.6}
 
-/* STATS */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border-radius:16px;overflow:hidden;margin:0 auto 100px;max-width:600px}
-.stat{background:rgba(255,255,255,0.03);padding:28px 16px;text-align:center}
-.stat-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--mango)}
-.stat-label{font-size:12px;color:var(--text-dim);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px}
+/* Stats */
+.stats{display:flex;justify-content:center;gap:48px;padding:40px 24px 60px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat .num{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--mango)}
+.stat .label{font-size:13px;color:var(--text-dim);margin-top:4px;text-transform:uppercase;letter-spacing:0.06em}
 
-/* SECTIONS */
-section{padding:80px 0}
-.section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
-.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,5vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.2;margin-bottom:16px}
-.section-desc{font-size:16px;color:var(--text-light);line-height:1.7;max-width:560px;margin-bottom:48px}
+/* Section headings */
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;text-align:center;margin-bottom:12px;letter-spacing:-0.02em}
+.section-sub{font-size:15px;color:var(--text-light);text-align:center;max-width:480px;margin:0 auto 48px}
 
-/* PILLARS */
-.pillars{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:520px){.pillars{grid-template-columns:1fr 1fr}}
-.pillar{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:28px 24px;transition:border-color 0.3s,transform 0.3s}
-.pillar:hover{border-color:rgba(255,107,53,0.3);transform:translateY(-4px)}
-.pillar-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
-.pillar h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;margin-bottom:8px}
-.pillar p{font-size:14px;color:var(--text-light);line-height:1.6}
+/* Pillars */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:900px;margin:0 auto;padding:0 24px 100px}
+.pillar{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;transition:border-color 0.3s,transform 0.3s}
+.pillar:hover{border-color:var(--glow);transform:translateY(-3px)}
+.pillar .emoji{font-size:28px;margin-bottom:12px}
+.pillar h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.pillar p{font-size:13px;color:var(--text-light);line-height:1.5}
 
-/* FOR WHO */
-.audience-grid{display:grid;grid-template-columns:1fr;gap:20px}
-@media(min-width:520px){.audience-grid{grid-template-columns:1fr 1fr}}
-.audience-card{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
-.audience-card .emoji{font-size:28px;flex-shrink:0;margin-top:2px}
+/* Audience */
+.audience{padding:0 24px 100px}
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:900px;margin:0 auto}
+.audience-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;display:flex;gap:14px;align-items:flex-start;transition:border-color 0.3s}
+.audience-card:hover{border-color:var(--glow)}
+.audience-icon{font-size:24px;flex-shrink:0;margin-top:2px}
 .audience-card h4{font-size:15px;font-weight:600;margin-bottom:4px}
 .audience-card p{font-size:13px;color:var(--text-light);line-height:1.5}
 
-/* CTA SECTION */
+/* CTA */
 .cta-section{text-align:center;padding:100px 24px;position:relative}
 .cta-section::before{content:'';position:absolute;bottom:0;left:50%;width:600px;height:400px;background:radial-gradient(circle,rgba(0,201,167,0.08) 0%,transparent 70%);transform:translateX(-50%);pointer-events:none}
-.cta-section .section-title{margin-bottom:12px}
 
-/* SOCIAL LINKS */
+/* Social */
 .social-row{display:flex;justify-content:center;gap:16px;margin-top:32px;flex-wrap:wrap}
-.social-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid rgba(255,255,255,0.12);border-radius:100px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;transition:border-color 0.2s,background 0.2s}
+.social-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;transition:border-color 0.2s,background 0.2s}
 .social-link:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.25)}
-.social-link svg{width:18px;height:18px}
 
-/* FOOTER */
-footer{border-top:1px solid rgba(255,255,255,0.06);padding:40px 24px;text-align:center}
+/* Footer */
+footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center}
 footer p{font-size:13px;color:var(--text-dim)}
-footer .logo-footer{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;margin-bottom:12px}
+footer .logo-footer{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px}
 footer .logo-footer span{color:var(--mango)}
+footer .disclaimer{font-size:10px;margin-top:12px;opacity:0.5}
+
+@media(max-width:640px){
+  nav{padding:12px 16px;flex-direction:column;gap:10px}
+  .nav-links{justify-content:center}
+  .stats{gap:24px}
+  .stat .num{font-size:24px}
+}
 </style>
 </head>
 <body>
 
+<!-- SVG Logo Symbol -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <symbol id="tb-logo" viewBox="0 0 140 120">
+      <path d="M 15 75 Q 15 100 35 100 L 85 100 Q 105 100 105 75 L 105 40 L 15 40 Z" fill="none" stroke="#FF6B35" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M 105 50 Q 125 50 125 68 Q 125 86 105 83" fill="none" stroke="#FF6B35" stroke-width="7" stroke-linecap="round"/>
+      <polygon points="48,55 48,80 76,67.5" fill="#FFF8F0"/>
+      <line x1="30" y1="5" x2="30" y2="28" stroke="#5DCAA5" stroke-width="3.5"/><rect x="25" y="11" width="10" height="8" fill="#5DCAA5" rx="1"/>
+      <line x1="50" y1="0" x2="50" y2="25" stroke="#E05555" stroke-width="3.5"/><rect x="45" y="7" width="10" height="8" fill="#E05555" rx="1"/>
+      <line x1="70" y1="3" x2="70" y2="27" stroke="#5DCAA5" stroke-width="3.5"/><rect x="65" y="9" width="10" height="8" fill="#5DCAA5" rx="1"/>
+      <line x1="90" y1="6" x2="90" y2="28" stroke="#E05555" stroke-width="3.5"/><rect x="85" y="12" width="10" height="8" fill="#E05555" rx="1"/>
+    </symbol>
+  </defs>
+</svg>
+
 <nav>
-  <div style="display:flex;align-items:center;gap:10px">
-    <svg width="34" height="34" viewBox="0 0 124 124" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(-143.6,-53.75) scale(0.624)">
-        <path d="M 245 235 Q 245 263 273 263 L 350 263 Q 378 263 378 235 L 378 165 L 245 165 Z" fill="none" stroke="#FF6B35" stroke-width="9" stroke-linejoin="round"/>
-        <path d="M 378 179 Q 405 179 405 203 Q 405 227 378 224" fill="none" stroke="#FF6B35" stroke-width="9" stroke-linecap="round"/>
-        <polygon points="298,196 298,232 327,214" fill="#FFF8F0"/>
-        <g transform="translate(263.6,118)"><line x1="6" y1="0" x2="6" y2="28" stroke="#5DCAA5" stroke-width="5"/><rect x="0" y="8" width="12" height="11" fill="#5DCAA5" rx="1.5"/></g>
-        <g transform="translate(291.6,108)"><line x1="6" y1="0" x2="6" y2="32" stroke="#E27878" stroke-width="5"/><rect x="0" y="9" width="12" height="14" fill="#E27878" rx="1.5"/></g>
-        <g transform="translate(319.6,112)"><line x1="6" y1="0" x2="6" y2="29" stroke="#5DCAA5" stroke-width="5"/><rect x="0" y="6" width="12" height="13" fill="#5DCAA5" rx="1.5"/></g>
-        <g transform="translate(347.6,121)"><line x1="6" y1="0" x2="6" y2="24" stroke="#5DCAA5" stroke-width="5"/><rect x="0" y="9" width="12" height="7" fill="#5DCAA5" rx="1.5"/></g>
-      </g>
-    </svg>
-    <div class="logo">Telugu<span>Brew</span></div>
+  <a href="index.html" class="logo" style="text-decoration:none">
+    <svg width="36" height="30" aria-label="TeluguBrew logo"><use href="#tb-logo"/></svg>
+    Telugu<span>Brew</span>
+  </a>
+  <div class="nav-links">
+    <a href="#follow" class="nav-link">Follow Us</a>
+    <a href="nri.html" class="nav-link highlight">🌏 NRI Diaspora</a>
   </div>
-  <a href="#follow" class="cta-nav">Follow Us</a>
 </nav>
 
 <section class="hero">
   <div class="badge">Know What's Brewing Around</div>
   <h1>Your daily <span class="mango">brew</span> of Markets, Movies, News & More</h1>
   <p>TeluguBrew delivers daily News, market updates, film reviews, and cultural insights for the newer generations.</p>
-  <div class="hero-actions">
-    <a href="#follow" class="btn-primary">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-      Follow on Instagram
-    </a>
-    <a href="#about" class="btn-secondary">
-      Learn More
-    </a>
-  </div>
 </section>
 
-<div class="container">
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-num">80M+</div>
-      <div class="stat-label">Telugu speakers</div>
+<div class="stats">
+  <div class="stat"><div class="num">80M+</div><div class="label">Telugu Speakers</div></div>
+  <div class="stat"><div class="num">0</div><div class="label">Gen Z Media Brands</div></div>
+  <div class="stat"><div class="num">1st</div><div class="label">That's Us</div></div>
+</div>
+
+<h2 class="section-title">What We Cover</h2>
+<p class="section-sub">Built for the newer generations — to make you sharper, faster, and more informed.</p>
+
+<div class="pillars">
+  <div class="pillar"><div class="emoji">📈</div><h3>Markets</h3><p>Daily market recaps, stock movements, and financial insights decoded for our generation.</p></div>
+  <div class="pillar"><div class="emoji">🎬</div><h3>Movies</h3><p>Tollywood releases, OTT drops, and entertainment roundups — what's in theaters and what's streaming.</p></div>
+  <div class="pillar"><div class="emoji">📰</div><h3>News</h3><p>Telangana, AP, and national headlines that matter — delivered without the noise.</p></div>
+  <div class="pillar"><div class="emoji">🌍</div><h3>Culture</h3><p>Telugu festivals, language, community stories, and everything that connects us.</p></div>
+</div>
+
+<div class="audience">
+  <h2 class="section-title">Who's It For</h2>
+  <p class="section-sub">If this sounds like you, you're in the right place.</p>
+  <div class="audience-grid">
+    <div class="audience-card"><div class="audience-icon">💼</div><div><h4>Young Professionals</h4><p>Want to understand markets and money without the jargon.</p></div></div>
+    <div class="audience-card"><div class="audience-icon">🎓</div><div><h4>Students</h4><p>Staying informed on what matters — careers, tech, and culture.</p></div></div>
+    <div class="audience-card" style="cursor:pointer" onclick="window.location.href='nri.html'">
+      <div class="audience-icon">🌏</div>
+      <div>
+        <h4>NRI Diaspora</h4>
+        <p>Visa updates, US markets, careers & community — built for Telugu NRIs.</p>
+        <span style="font-size:12px;color:var(--mango);font-weight:600;margin-top:6px;display:inline-block">Explore NRI Hub →</span>
+      </div>
     </div>
-    <div class="stat">
-      <div class="stat-num">0</div>
-      <div class="stat-label">Gen Z media brands</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">1st</div>
-      <div class="stat-label">That's us</div>
-    </div>
+    <div class="audience-card"><div class="audience-icon">🎬</div><div><h4>Tollywood Fans</h4><p>Release dates, box office, OTT schedules — all in one spot.</p></div></div>
   </div>
 </div>
 
-<section id="about">
-  <div class="container">
-    <div class="section-label">What we do</div>
-    <h2 class="section-title">News that doesn't put you to sleep. In your language.</h2>
-    <p class="section-desc">TeluguBrew covers markets, movies, and culture the way our generation actually talks — Tenglish, with a point of view, no shouting anchors. Think of us as your smart friend who reads everything so you don't have to.</p>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-icon" style="background:rgba(255,107,53,0.12)">📈</div>
-        <h3>Markets & Money</h3>
-        <p>Daily market recaps, stock spotlights, and financial literacy — explained simply, not dumbed down.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon" style="background:rgba(0,201,167,0.12)">🎬</div>
-        <h3>Film & Entertainment</h3>
-        <p>Honest reviews, OTT recommendations, and Tollywood culture — no promotional fluff.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon" style="background:rgba(127,119,221,0.12)">🌆</div>
-        <h3>Culture & Lifestyle</h3>
-        <p>Weekend plans, food spots, diaspora stories, and everything in between.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon" style="background:rgba(56,138,221,0.12)">🌍</div>
-        <h3>News & Explainers</h3>
-        <p>What happened today and why it matters to you — in 5 minutes, not 50.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-label">Who it's for</div>
-    <h2 class="section-title">Built for the newer generations — to make you sharper, faster, and more informed</h2>
-    <p class="section-desc">If you want your news, markets, and culture delivered with substance and personality — this is for you.</p>
-
-    <div class="audience-grid">
-      <div class="audience-card">
-        <div class="emoji">💼</div>
-        <div>
-          <h4>Young professionals</h4>
-          <p>In Hyderabad, Bangalore, or the Bay Area — building careers and portfolios simultaneously</p>
-        </div>
-      </div>
-      <div class="audience-card">
-        <div class="emoji">🎓</div>
-        <div>
-          <h4>College students</h4>
-          <p>Want to understand markets and money before everyone else in their batch does</p>
-        </div>
-      </div>
-      <div class="audience-card">
-        <div class="emoji">🌏</div>
-        <div>
-          <h4>NRI Telugu diaspora</h4>
-          <p>Living abroad but culturally connected — want Telugu content that matches their worldview</p>
-        </div>
-      </div>
-      <div class="audience-card">
-        <div class="emoji">🎬</div>
-        <div>
-          <h4>Tollywood enthusiasts</h4>
-          <p>Want real reviews and cultural commentary, not paid promotions disguised as opinions</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="cta-section" id="follow">
-  <div class="section-label">Join us</div>
-  <h2 class="section-title">Follow TeluguBrew</h2>
-  <p class="section-desc" style="margin:0 auto 36px;text-align:center">Our journey has just begun. Be part of it.</p>
-
-  <a href="https://instagram.com/telugubrew" class="btn-primary" target="_blank" rel="noopener">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-    @telugubrew on Instagram
-  </a>
-
+  <h2 class="section-title">Stay Connected</h2>
+  <p class="section-sub">If you want your news, markets, and culture delivered the way our generation talks — follow us.</p>
   <div class="social-row">
-    <a href="https://youtube.com/@telugubrew" class="social-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.9 31.9 0 000 12a31.9 31.9 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.9 31.9 0 0024 12a31.9 31.9 0 00-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-      YouTube
-    </a>
-    <a href="https://twitter.com/telugubrew" class="social-link" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      X / Twitter
-    </a>
-    <a href="#" class="social-link">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.612.616l4.534-1.478A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.137 0-4.146-.621-5.863-1.735l-.42-.272-2.698.88.863-2.745-.283-.434A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      WhatsApp
-    </a>
+    <a href="https://instagram.com/telugubrew" target="_blank" class="social-link">📸 Instagram</a>
+    <a href="#" class="social-link">▶️ YouTube</a>
+    <a href="#" class="social-link">🐦 X / Twitter</a>
+    <a href="#" class="social-link">💬 WhatsApp</a>
   </div>
 </section>
 
 <footer>
-  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px">
-    <svg width="24" height="24" viewBox="0 0 124 124" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(-143.6,-53.75) scale(0.624)">
-        <path d="M 245 235 Q 245 263 273 263 L 350 263 Q 378 263 378 235 L 378 165 L 245 165 Z" fill="none" stroke="#FF6B35" stroke-width="9" stroke-linejoin="round"/>
-        <path d="M 378 179 Q 405 179 405 203 Q 405 227 378 224" fill="none" stroke="#FF6B35" stroke-width="9" stroke-linecap="round"/>
-        <polygon points="298,196 298,232 327,214" fill="#FFF8F0"/>
-        <g transform="translate(263.6,118)"><line x1="6" y1="0" x2="6" y2="28" stroke="#5DCAA5" stroke-width="5"/><rect x="0" y="8" width="12" height="11" fill="#5DCAA5" rx="1.5"/></g>
-        <g transform="translate(291.6,108)"><line x1="6" y1="0" x2="6" y2="32" stroke="#E27878" stroke-width="5"/><rect x="0" y="9" width="12" height="14" fill="#E27878" rx="1.5"/></g>
-        <g transform="translate(319.6,112)"><line x1="6" y1="0" x2="6" y2="29" stroke="#5DCAA5" stroke-width="5"/><rect x="0" y="6" width="12" height="13" fill="#5DCAA5" rx="1.5"/></g>
-        <g transform="translate(347.6,121)"><line x1="6" y1="0" x2="6" y2="24" stroke="#5DCAA5" stroke-width="5"/><rect x="0" y="9" width="12" height="7" fill="#5DCAA5" rx="1.5"/></g>
-      </g>
-    </svg>
-    <div class="logo-footer" style="margin-bottom:0">Telugu<span>Brew</span></div>
+  <div class="logo-footer">
+    <svg width="28" height="24" aria-label="TeluguBrew"><use href="#tb-logo"/></svg>
+    Telugu<span>Brew</span>
   </div>
   <p>Markets. Movies. News. Culture.</p>
-  <p style="margin-top:8px">© 2026 TeluguBrew. All rights reserved.</p>
+  <p class="disclaimer">Educational content. Not investment advice.</p>
+  <p style="margin-top:8px;font-size:12px;opacity:0.4">© 2026 TeluguBrew. All rights reserved.</p>
 </footer>
 
 </body>
