@@ -6,7 +6,7 @@
 <title>TeluguBrew — NRI Diaspora Hub</title>
 <meta name="description" content="US markets, investment confessions, visa bulletins, career signals — built for Telugu NRIs. A TeluguBrew vertical.">
 <meta property="og:title" content="TeluguBrew NRI Diaspora Hub — Markets. Confessions. Visa. Careers.">
-<meta property="og:description" content="Everything a Telugu NRI needs — US markets, real investment stories, immigration updates, tech careers. No noise, no fluff.">
+<meta property="og:description" content="Everything an NRI needs — US markets, real investment stories, immigration updates, tech careers. No noise, no fluff.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
@@ -41,12 +41,8 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .sec-head{text-align:center;margin-bottom:44px}
 .sec-head h2{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;margin:12px 0 8px;line-height:1.2;letter-spacing:-0.02em}
 .sec-head p{font-size:15px;color:var(--text-light);max-width:500px;margin:0 auto;line-height:1.5}
-.cta-row{display:flex;gap:8px;justify-content:center;max-width:420px;margin:0 auto}
-.cta-input{flex:1;padding:11px 14px;border-radius:8px;border:1px solid var(--border);background:rgba(20,20,40,0.8);color:var(--text);font-size:14px;outline:none;font-family:inherit}
-.cta-input:focus{border-color:var(--mango)}
 .cta-btn{padding:11px 22px;border-radius:8px;border:none;background:var(--mango);color:var(--bg);font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;font-family:inherit;transition:opacity 0.2s}
 .cta-btn:hover{opacity:0.9}
-.cta-success{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:8px;padding:13px 24px;font-size:14px;color:var(--green);font-weight:500;width:100%;text-align:center}
 .cta-fine{font-size:11px;color:var(--text-dim);margin-top:12px;text-align:center}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all 0.25s ease}
 .card:hover{border-color:var(--glow);transform:translateY(-2px)}
@@ -71,6 +67,14 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .confession-highlight .tagline{font-size:15px;color:var(--text-light);line-height:1.5;margin-bottom:20px}
 .confession-tags{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .confession-tag{font-size:12px;font-weight:600;padding:5px 14px;border-radius:16px;border:1px solid}
+/* Founder's note */
+.founder-note{background:linear-gradient(135deg,rgba(255,107,53,0.06),rgba(244,114,182,0.04));border:1px solid rgba(255,107,53,0.15);border-radius:20px;padding:48px 40px;max-width:760px;margin:0 auto}
+.founder-note .eyebrow{display:block;text-align:center;margin-bottom:18px}
+.founder-note h2{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;text-align:center;margin-bottom:28px;letter-spacing:-0.02em}
+.founder-note p{font-size:16px;color:var(--text-light);line-height:1.75;margin-bottom:18px}
+.founder-note p:last-of-type{margin-bottom:0}
+.founder-note strong{color:var(--text);font-weight:600}
+.founder-note .signoff{margin-top:28px;padding-top:24px;border-top:1px solid var(--border);font-size:14px;color:var(--text-dim);text-align:center;font-style:italic}
 /* Social row */
 .social-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
 .social-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:100px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;transition:border-color 0.2s,background 0.2s}
@@ -87,13 +91,15 @@ footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
   nav{padding:12px 16px;flex-direction:column;gap:10px}
   .nav-links{justify-content:center}
   .hero h1{font-size:32px}
-  .cta-row{flex-direction:column}
   .tab-row{gap:4px}
   .tab-btn{font-size:12px;padding:6px 12px}
   .region-row{gap:10px}
   .region-card{padding:16px 20px;min-width:100px}
   .container{padding:0 16px}
   .confession-highlight{padding:28px 20px}
+  .founder-note{padding:32px 24px}
+  .founder-note h2{font-size:24px}
+  .founder-note p{font-size:15px}
 }
 </style>
 </head>
@@ -131,12 +137,26 @@ footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
     <span>USA Edition — Live Now</span>
   </div>
   <h1>NRI Diaspora <span class="gradient">Hub</span></h1>
-  <p class="sub">US markets. Investment confessions. Visa bulletins. Career signals. Everything a Telugu NRI needs — no noise, no fluff.</p>
-  <div class="cta-row" id="nri-cta">
-    <input type="email" class="cta-input" placeholder="you@email.com" id="nri-email">
-    <button class="cta-btn" onclick="handleSubscribe()">Get Updates</button>
+  <p class="sub">US markets. Investment confessions. Visa bulletins. Career signals. Everything an NRI needs — no noise, no fluff.</p>
+  <a href="https://instagram.com/telugubrewnri" target="_blank" class="cta-btn" style="display:inline-block;text-decoration:none">Follow @TeluguBrewNRI</a>
+  <p class="cta-fine">Daily updates on Instagram. No spam, ever.</p>
+</section>
+
+<!-- Why We're Building This — founder's note -->
+<section style="padding:0 24px 72px">
+  <div class="founder-note">
+    <span class="eyebrow badge badge-s">Why We're Building This</span>
+
+    <p><strong>You already left home once.</strong> Wall Street doesn't have to feel like another country too. We wanted a place that explains what's moving the markets — in a way that actually sounds like us. No jargon you have to Google. No pretending you already know what HBM or PCE means. Just someone explaining it like a friend would.</p>
+
+    <p>Every one of us has a trade we're proud of, and one we don't talk about. <strong>Investment Confessions</strong> exists because the most honest financial education isn't a textbook — it's hearing that someone else also panic-sold, also held too long, also bet big and got lucky. Real stories. Real mistakes. Real wins.</p>
+
+    <p>We also can't ignore what's happening to tech jobs. Layoffs, AI replacing roles, visa uncertainty stacked on top of it — a lot of us came here, built a career around IT, and never expected to ask "what's next?" this early. We don't have all the answers. But we want to be the place that helps you think it through — whether that's upskilling, relocating, going back to India, or building something of your own.</p>
+
+    <p><strong>Strong community. Smart money.</strong> Not separate goals — the same one.</p>
+
+    <p class="signoff">— Built by an NRI, for the NRI community.</p>
   </div>
-  <p class="cta-fine">Free. No spam. Unsubscribe anytime.</p>
 </section>
 
 <!-- Pillars — reordered: Markets > Confessions > Visa > News/Tech > Community -->
@@ -264,7 +284,6 @@ var REGIONS = [
   { flag:"\u{1F1E8}\u{1F1E6}", name:"Canada", live:false },
   { flag:"\u{1F1E6}\u{1F1FA}", name:"Australia", live:false }
 ];
-function handleSubscribe(){var i=document.getElementById('nri-email');if(!i||!i.value.includes('@'))return;document.getElementById('nri-cta').innerHTML='<div class="cta-success">You\'re on the list. We\'ll keep you posted. \u2615</div>';}
 var activeTab=0;
 function renderPillar(idx){activeTab=idx;var p=PILLARS[idx];document.getElementById('tabs').innerHTML=PILLARS.map(function(pl,i){return '<button class="tab-btn'+(i===idx?' active':'')+'" onclick="renderPillar('+i+')">'+pl.icon+' '+pl.title+'</button>';}).join('');document.getElementById('pillar-detail').innerHTML='<div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><span style="font-size:26px">'+p.icon+'</span><div><span class="badge badge-s">'+p.tag+'</span><h3>'+p.title+'</h3></div></div><p class="desc">'+p.desc+'</p>'+p.items.map(function(item){return '<div class="pillar-item"><span class="pillar-dot"></span>'+item+'</div>';}).join('');}
 document.getElementById('upcoming').innerHTML=UPCOMING.map(function(u){return '<div class="card" style="padding:18px"><span class="badge" style="color:'+u.color+';background:'+u.color+'18">'+u.tag+'</span><p style="font-size:14px;font-weight:600;margin-top:9px;line-height:1.35">'+u.label+'</p></div>';}).join('');
