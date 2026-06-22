@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Confessions &amp; Questions — TeluguBrew NRI</title>
+<meta name="description" content="Real investment stories and questions from the NRI community. Share a confession, ask a question, learn together.">
+<meta property="og:title" content="Investment Confessions &amp; Questions — TeluguBrew NRI">
+<meta property="og:description" content="Stories, lessons, and questions from NRIs figuring out US markets together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D0D1A;--surface:#141428;--mango:#FF6B35;--teal:#00C9A7;
+  --text:#EAEAF2;--text-light:#A0A0B8;--text-dim:#5A5A7A;
+  --border:rgba(255,255,255,0.06);--glow:rgba(255,107,53,0.15);
+  --green:#34D399;--gold:#FFB347;--purple:#818CF8;--pink:#F472B6;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(255,107,53,0.3)}
+a{color:inherit;text-decoration:none}
+
+/* ── Nav ── */
+nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 32px;border-bottom:1px solid var(--border);background:rgba(13,13,26,0.92);backdrop-filter:blur(12px)}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
+.logo span{color:var(--mango)}
+.nav-links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.nav-link{padding:6px 14px;border-radius:6px;font-size:13px;font-weight:500;color:var(--text-light);transition:all 0.2s}
+.nav-link:hover{color:var(--text)}
+.nav-link.active{background:var(--mango);color:var(--bg);font-weight:700}
+
+/* ── Utilities ── */
+.container{max-width:900px;margin:0 auto;padding:0 28px}
+.badge{font-size:11px;font-weight:700;letter-spacing:0.08em;padding:3px 10px;border-radius:4px;text-transform:uppercase;display:inline-block}
+.badge-purple{color:var(--purple);background:rgba(129,140,248,0.12)}
+.badge-mango{color:var(--mango);background:rgba(255,107,53,0.1)}
+.badge-green{color:var(--green);background:rgba(52,211,153,0.1)}
+.badge-teal{color:var(--teal);background:rgba(0,201,167,0.1)}
+.gradient{background:linear-gradient(135deg,var(--mango),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.gradient-purple{background:linear-gradient(135deg,var(--purple),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cta-btn{display:inline-block;padding:12px 28px;border-radius:8px;background:var(--mango);color:var(--bg);font-weight:700;font-size:15px;cursor:pointer;transition:opacity 0.2s;border:none;font-family:inherit}
+.cta-btn:hover{opacity:0.9}
+.cta-btn-purple{display:inline-block;padding:12px 28px;border-radius:8px;background:var(--purple);color:white;font-weight:700;font-size:15px;cursor:pointer;transition:opacity 0.2s;border:none;font-family:inherit}
+.cta-btn-purple:hover{opacity:0.9}
+.cta-btn-outline{display:inline-block;padding:11px 26px;border-radius:8px;background:transparent;color:var(--mango);font-weight:700;font-size:15px;border:1.5px solid var(--mango);transition:all 0.2s;font-family:inherit}
+.cta-btn-outline:hover{background:rgba(255,107,53,0.08)}
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+
+/* ── Hero ── */
+.hero{text-align:center;padding:72px 24px 56px;max-width:760px;margin:0 auto;animation:fadeUp 0.55s ease both;position:relative}
+.hero::before{content:'';position:absolute;top:-60px;left:50%;width:800px;height:500px;background:radial-gradient(circle,rgba(129,140,248,0.07) 0%,transparent 70%);transform:translateX(-50%);pointer-events:none}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin-bottom:18px}
+.hero .sub{font-size:17px;color:var(--text-light);max-width:540px;margin:0 auto 32px;line-height:1.65}
+.hero-stats{display:flex;justify-content:center;gap:40px;margin-top:36px;flex-wrap:wrap}
+.hero-stat .num{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;color:var(--mango)}
+.hero-stat .lbl{font-size:12px;color:var(--text-dim);margin-top:2px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── How it works ── */
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:40px}
+.how-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;text-align:center}
+.how-card .step-num{width:36px;height:36px;border-radius:50%;background:rgba(129,140,248,0.12);border:1.5px solid rgba(129,140,248,0.3);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--purple);margin:0 auto 16px}
+.how-card h3{font-size:15px;font-weight:700;margin-bottom:8px}
+.how-card p{font-size:13px;color:var(--text-light);line-height:1.5}
+
+/* ── Content tabs ── */
+.content-tabs{display:flex;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:5px;gap:4px;max-width:380px;margin:0 auto}
+.content-tab{flex:1;padding:10px 20px;border-radius:8px;border:none;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;color:var(--text-light);background:transparent}
+.content-tab.active{background:var(--mango);color:var(--bg)}
+
+/* ── Filter buttons ── */
+.filter-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.filter-pills{display:flex;gap:8px;flex-wrap:wrap}
+.filter-pill{padding:6px 16px;border-radius:18px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:var(--text-light);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s}
+.filter-pill.active{background:var(--mango);color:var(--bg);border-color:var(--mango)}
+.filter-pill.active-purple{background:var(--purple);color:white;border-color:var(--purple)}
+
+/* ── Story cards ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px;transition:all 0.25s;cursor:pointer;position:relative;overflow:hidden}
+.story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0}
+.story-card.win::before{background:var(--green)}
+.story-card.loss::before{background:#E05555}
+.story-card.mixed::before{background:linear-gradient(90deg,#E05555,var(--green))}
+.story-card:hover{border-color:var(--glow);transform:translateY(-3px)}
+.story-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.story-type{font-size:11px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:4px;text-transform:uppercase}
+.story-author{font-size:13px;color:var(--text-dim)}
+.story-ticker{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text-dim);margin-left:auto}
+.story-card h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;line-height:1.2;letter-spacing:-0.01em}
+.story-excerpt{font-size:14px;color:var(--text-light);line-height:1.65;flex:1}
+.story-lesson{background:rgba(255,107,53,0.06);border-left:3px solid var(--mango);padding:12px 16px;border-radius:0 8px 8px 0}
+.story-lesson .label{font-size:10px;font-weight:700;color:var(--mango);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.story-lesson p{font-size:13px;color:var(--text-light);line-height:1.5}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border)}
+.card-footer .date{font-size:12px;color:var(--text-dim)}
+.card-footer .comments{font-size:12px;color:var(--text-dim);display:flex;align-items:center;gap:5px}
+
+/* ── Question cards ── */
+.question-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px;transition:all 0.25s;cursor:pointer;position:relative;overflow:hidden}
+.question-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;background:var(--purple)}
+.question-card.answered::before{background:var(--teal)}
+.question-card:hover{border-color:rgba(129,140,248,0.25);transform:translateY(-3px)}
+.q-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.q-status{font-size:11px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:4px;text-transform:uppercase}
+.q-status.answered{color:var(--teal);background:rgba(0,201,167,0.1)}
+.q-status.open{color:var(--purple);background:rgba(129,140,248,0.12)}
+.q-cat{font-size:12px;color:var(--text-dim);background:rgba(255,255,255,0.04);padding:2px 8px;border-radius:4px}
+.q-author{font-size:13px;color:var(--text-dim);margin-left:auto}
+.question-card h3{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;line-height:1.3;letter-spacing:-0.01em}
+.question-card .q-context{font-size:14px;color:var(--text-light);line-height:1.65;flex:1}
+.best-answer{background:rgba(0,201,167,0.06);border-left:3px solid var(--teal);padding:12px 16px;border-radius:0 8px 8px 0}
+.best-answer .label{font-size:10px;font-weight:700;color:var(--teal);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.best-answer p{font-size:13px;color:var(--text-light);line-height:1.5}
+.best-answer .answerer{font-size:12px;color:var(--text-dim);margin-top:6px}
+
+/* ── Submit cards ── */
+.submit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:820px;margin:0 auto}
+.submit-card{border-radius:20px;padding:44px 36px;text-align:center}
+.submit-card.confessions{background:linear-gradient(135deg,rgba(255,107,53,0.07),rgba(255,179,71,0.05));border:1px solid rgba(255,107,53,0.2)}
+.submit-card.questions{background:linear-gradient(135deg,rgba(129,140,248,0.07),rgba(0,201,167,0.05));border:1px solid rgba(129,140,248,0.2)}
+.submit-card .icon{font-size:36px;margin-bottom:16px}
+.submit-card h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:800;margin-bottom:10px;letter-spacing:-0.02em}
+.submit-card p{font-size:14px;color:var(--text-light);line-height:1.65;margin-bottom:24px}
+.form-placeholder{margin-top:20px;background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;padding:28px 20px;text-align:center}
+.form-placeholder p{color:var(--text-dim);font-size:13px;margin-bottom:10px}
+.consent{font-size:11px;color:var(--text-dim);margin-top:20px;line-height:1.6}
+
+/* ── Modal ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.2s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--surface);border:1px solid rgba(255,255,255,0.1);border-radius:20px;max-width:660px;width:100%;max-height:88vh;overflow-y:auto;padding:36px;position:relative}
+.modal-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.06);border:none;color:var(--text-light);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;line-height:1}
+.modal h2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;margin:16px 0 12px;line-height:1.2}
+.modal .full-body{font-size:15px;color:var(--text-light);line-height:1.8;white-space:pre-line}
+.modal .highlight-box{padding:16px 20px;border-radius:0 10px 10px 0;margin-top:24px}
+.modal .highlight-box .label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
+.modal .highlight-box p{font-size:15px;color:var(--text);line-height:1.6}
+
+/* ── Comments ── */
+.comments-section{margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
+.comments-section h4{font-size:14px;font-weight:700;margin-bottom:16px;color:var(--text-dim)}
+.comment-item{display:flex;gap:12px;margin-bottom:16px}
+.comment-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--mango));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:white;flex-shrink:0}
+.comment-body{flex:1}
+.comment-author{font-size:12px;font-weight:600;margin-bottom:3px}
+.comment-text{font-size:13px;color:var(--text-light);line-height:1.5}
+.comment-time{font-size:11px;color:var(--text-dim);margin-top:3px}
+.comment-form{margin-top:16px}
+.comment-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-family:inherit;font-size:13px;resize:vertical;min-height:70px}
+.comment-input:focus{outline:none;border-color:rgba(129,140,248,0.4)}
+.comment-submit{margin-top:8px;padding:8px 20px;background:var(--purple);color:white;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:opacity 0.2s}
+.comment-submit:hover{opacity:0.85}
+.comment-note{font-size:11px;color:var(--text-dim);margin-top:6px}
+
+/* ── Empty state ── */
+.empty-state{text-align:center;padding:60px 24px;color:var(--text-dim);grid-column:1/-1}
+.empty-state h3{font-size:18px;font-weight:700;color:var(--text-light);margin-bottom:8px}
+.empty-state p{font-size:14px;line-height:1.6}
+
+/* ── Footer ── */
+footer{border-top:1px solid var(--border);padding:28px;text-align:center}
+footer p{font-size:13px;color:var(--text-dim)}
+footer .logo-footer{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:7px}
+footer .logo-footer span{color:var(--mango)}
+footer .disclaimer{font-size:10px;margin-top:14px;opacity:0.45}
+
+@media(max-width:640px){
+  nav{padding:12px 16px;flex-direction:column;gap:10px}
+  .nav-links{justify-content:center}
+  .hero h1{font-size:28px}
+  .hero-stats{gap:24px}
+  .container{padding:0 16px}
+  .submit-grid{grid-template-columns:1fr}
+  .modal{padding:24px}
+  .cards-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <symbol id="tb-logo" viewBox="0 0 140 120">
+      <path d="M 15 75 Q 15 100 35 100 L 85 100 Q 105 100 105 75 L 105 40 L 15 40 Z" fill="none" stroke="#FF6B35" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M 105 50 Q 125 50 125 68 Q 125 86 105 83" fill="none" stroke="#FF6B35" stroke-width="7" stroke-linecap="round"/>
+      <polygon points="48,55 48,80 76,67.5" fill="#FFF8F0"/>
+      <line x1="30" y1="5" x2="30" y2="28" stroke="#5DCAA5" stroke-width="3.5"/><rect x="25" y="11" width="10" height="8" fill="#5DCAA5" rx="1"/>
+      <line x1="50" y1="0" x2="50" y2="25" stroke="#E05555" stroke-width="3.5"/><rect x="45" y="7" width="10" height="8" fill="#E05555" rx="1"/>
+      <line x1="70" y1="3" x2="70" y2="27" stroke="#5DCAA5" stroke-width="3.5"/><rect x="65" y="9" width="10" height="8" fill="#5DCAA5" rx="1"/>
+      <line x1="90" y1="6" x2="90" y2="28" stroke="#E05555" stroke-width="3.5"/><rect x="85" y="12" width="10" height="8" fill="#E05555" rx="1"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Nav -->
+<nav>
+  <a href="/" class="logo">
+    <svg width="36" height="30" aria-label="TeluguBrew logo"><use href="#tb-logo"/></svg>
+    Telugu<span>Brew</span>
+  </a>
+  <div class="nav-links">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/nri" class="nav-link">🌏 NRI Hub</a>
+    <a href="/nri/confessions" class="nav-link active">Confessions</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <span class="badge badge-purple" style="margin-bottom:16px;display:inline-block">COMMUNITY SERIES</span>
+  <h1>Investment Confessions<br><span class="gradient-purple">&amp; Questions</span></h1>
+  <p class="sub">Share a story from your investing journey — win, loss, or lesson. Or ask something you've always been too afraid to ask.</p>
+  <div class="hero-btns">
+    <a href="#submit" class="cta-btn">Share a Confession</a>
+    <a href="#submit" class="cta-btn-purple">Ask a Question</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num" id="story-count">0</div><div class="lbl">Confessions</div></div>
+    <div class="hero-stat"><div class="num" id="q-count">0</div><div class="lbl">Questions</div></div>
+    <div class="hero-stat"><div class="num">100%</div><div class="lbl">Anonymous Option</div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- How it works -->
+<section style="padding:64px 0 48px">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:32px">
+      <span class="badge badge-mango">HOW IT WORKS</span>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;margin:12px 0 8px;letter-spacing:-0.02em">Your story or question helps someone else</h2>
+      <p style="color:var(--text-light);font-size:15px;max-width:480px;margin:0 auto">The most honest financial education doesn't come from textbooks. It comes from people who've actually been there.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="step-num">1</div>
+        <h3>Submit below</h3>
+        <p>Share a confession or ask a question. Anonymous or named — your call. No minimum length, no judgment.</p>
+      </div>
+      <div class="how-card">
+        <div class="step-num">2</div>
+        <h3>We review</h3>
+        <p>TeluguBrew reviews every submission. Confessions may be lightly edited for clarity. Questions get researched or answered by the community.</p>
+      </div>
+      <div class="how-card">
+        <div class="step-num">3</div>
+        <h3>Published here &amp; on Instagram</h3>
+        <p>Your story or question goes live on this page and becomes a post on @TeluguBrewNRI.</p>
+      </div>
+      <div class="how-card">
+        <div class="step-num">4</div>
+        <h3>Community responds</h3>
+        <p>Others comment, share similar experiences, or answer the question from their own journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Community content — tabbed -->
+<section style="padding:64px 0">
+  <div class="container">
+
+    <!-- Tab switcher -->
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="content-tabs">
+        <button class="content-tab active" id="tab-confessions" onclick="switchTab('confessions')">
+          📖 Confessions <span id="conf-badge" style="background:rgba(255,107,53,0.2);color:var(--mango);font-size:11px;padding:1px 7px;border-radius:10px;margin-left:4px;font-weight:700">0</span>
+        </button>
+        <button class="content-tab" id="tab-questions" onclick="switchTab('questions')">
+          ❓ Questions <span id="q-badge" style="background:rgba(129,140,248,0.2);color:var(--purple);font-size:11px;padding:1px 7px;border-radius:10px;margin-left:4px;font-weight:700">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Confessions panel -->
+    <div id="panel-confessions">
+      <div class="filter-row">
+        <div></div>
+        <div class="filter-pills">
+          <button class="filter-pill active" onclick="filterStories('all',this)">All</button>
+          <button class="filter-pill" onclick="filterStories('win',this)">Wins</button>
+          <button class="filter-pill" onclick="filterStories('loss',this)">Losses</button>
+          <button class="filter-pill" onclick="filterStories('mixed',this)">Mixed</button>
+        </div>
+      </div>
+      <div class="cards-grid" id="stories-container"></div>
+    </div>
+
+    <!-- Questions panel -->
+    <div id="panel-questions" style="display:none">
+      <div class="filter-row">
+        <div></div>
+        <div class="filter-pills">
+          <button class="filter-pill active" onclick="filterQuestions('all',this)">All</button>
+          <button class="filter-pill" onclick="filterQuestions('answered',this)">Answered</button>
+          <button class="filter-pill" onclick="filterQuestions('open',this)">Open</button>
+        </div>
+      </div>
+      <div class="cards-grid" id="questions-container"></div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Submit section -->
+<section style="padding:72px 0 80px" id="submit">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:44px">
+      <span class="badge badge-purple">YOUR TURN</span>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;margin:14px 0 10px;letter-spacing:-0.02em">Two ways to contribute</h2>
+      <p style="color:var(--text-light);font-size:15px">No story too small. No question too basic. This community has been exactly where you are.</p>
+    </div>
+
+    <div class="submit-grid">
+
+      <!-- Confession form -->
+      <div class="submit-card confessions">
+        <div class="icon">📖</div>
+        <h3>Share a Confession</h3>
+        <p>A trade you're proud of. One you're not. A moment that taught you something the hard way. Real stories, anonymized if you want.</p>
+
+        <!-- TALLY EMBED — CONFESSIONS
+             Replace div below with your Tally confession form embed code
+             Suggested fields: Story (long text), Type (Win/Loss/Mixed),
+             The Lesson (short text), Anonymous? (toggle), Consent (checkbox)
+        -->
+        <div class="form-placeholder" id="confession-form">
+          <p>Submission form coming soon</p>
+          <p style="margin-top:4px">For now, DM your story on Instagram</p>
+          <a href="https://instagram.com/telugubrewnri" target="_blank" class="cta-btn-outline" style="margin-top:14px;display:inline-block;font-size:13px;padding:8px 20px">DM @TeluguBrewNRI</a>
+          <!--
+          DEVELOPER: Replace this div with Tally embed:
+          <iframe data-tally-src="https://tally.so/embed/CONFESSION_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1"
+            width="100%" height="520" frameborder="0" scrolling="no" title="Share a Confession"></iframe>
+          -->
+        </div>
+        <p class="consent">By submitting you give TeluguBrew permission to publish your story in anonymized or attributed form on this website and @TeluguBrewNRI.</p>
+      </div>
+
+      <!-- Question form -->
+      <div class="submit-card questions">
+        <div class="icon">❓</div>
+        <h3>Ask a Question</h3>
+        <p>Confused about 401(k) vs Roth? Not sure how NRI taxes work? Don't know what a put option is? No question is too basic here.</p>
+
+        <!-- TALLY EMBED — QUESTIONS
+             Replace div below with your Tally question form embed code
+             Suggested fields: Your Question (long text), Category (dropdown:
+             Markets / Tax & Filing / Visa & Money / General Investing / NRI-Specific / Other),
+             More context (optional long text), Anonymous? (toggle), Consent (checkbox)
+        -->
+        <div class="form-placeholder" id="question-form">
+          <p>Question form coming soon</p>
+          <p style="margin-top:4px">Ask us directly on Instagram for now</p>
+          <a href="https://instagram.com/telugubrewnri" target="_blank" class="cta-btn-outline" style="margin-top:14px;display:inline-block;font-size:13px;padding:8px 20px;color:var(--purple);border-color:var(--purple)">Ask @TeluguBrewNRI</a>
+          <!--
+          DEVELOPER: Replace this div with Tally embed:
+          <iframe data-tally-src="https://tally.so/embed/QUESTION_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1"
+            width="100%" height="520" frameborder="0" scrolling="no" title="Ask a Question"></iframe>
+          -->
+        </div>
+        <p class="consent">Questions may be published on this page and on @TeluguBrewNRI. We never share your personal details. We may lightly edit for clarity.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Footer -->
+<footer>
+  <div class="logo-footer">
+    <svg width="28" height="24" aria-label="TeluguBrew"><use href="#tb-logo"/></svg>
+    Telugu<span>Brew</span>
+  </div>
+  <p>Markets. Confessions. Visa. Careers. <strong style="color:var(--mango)">NRI Diaspora.</strong></p>
+  <p class="disclaimer">Educational content only. Not financial, legal, or immigration advice. Stories and answers shared on this page are personal experiences and community responses — they do not constitute professional advice. Consult a licensed professional before making investment decisions.</p>
+  <p style="margin-top:8px;font-size:12px;opacity:0.4">© 2026 TeluguBrew. All rights reserved.</p>
+</footer>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-content">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div id="modal-inner"></div>
+  </div>
+</div>
+
+<script>
+// ─── CONFESSIONS DATA ────────────────────────────────────────────────────────
+// DEVELOPER NOTE: Replace with CMS/API calls when you have a backend.
+// Each story: { id, type, author, ticker, title, excerpt, full, lesson, date, comments[] }
+const STORIES = [
+  {
+    id: 1, type: "loss", author: "Anonymous", ticker: "NVDA",
+    title: "I panic sold Nvidia the day before it ran 18%",
+    excerpt: "I'd been holding for 6 months. One bad earnings headline from a different chip company spooked me. I sold at $580. It opened at $684 the next morning.",
+    full: `I'd been holding NVDA for almost 6 months. Cost basis around $520. It had been a slow grind but I believed in the AI story long term.
+
+Then another chip company — not even Nvidia — had a weak guidance. The whole sector dipped. I panicked. I told myself I was "protecting my gains." I sold at $580 pre-market.
+
+That same day, Nvidia announced a massive data center deal. The stock ran 18% by close. I watched it happen in real time, refreshing my brokerage app every 10 minutes like that would somehow help.
+
+The worst part wasn't the money I left on the table. It was realising I hadn't actually understood why I owned it. I was just riding momentum. The moment it got scary, I had no conviction to hold onto.`,
+    lesson: "If you can't explain in one sentence why you own something, you'll sell it at exactly the wrong time.",
+    date: "June 2026",
+    comments: [
+      { author: "Ravi K.", avatar: "R", text: "This is painfully relatable. I did the same with MU last year.", time: "2 days ago" },
+      { author: "Anonymous", avatar: "?", text: "The part about not knowing why you owned it — that hit hard. Writing down my thesis before every trade now.", time: "1 day ago" }
+    ]
+  },
+  {
+    id: 2, type: "win", author: "Priya S.", ticker: "SNDK",
+    title: "I bought SanDisk on day one because my cousin worked in storage",
+    excerpt: "Everyone laughed when I put $2,000 into a spinoff nobody had heard of. My cousin kept saying storage demand was exploding. I trusted her. That $2,000 is worth $93,000 tonight.",
+    full: `My cousin works at a cloud storage company. Last year she kept telling me at family dinners: "you have no idea how much data we're storing, it's insane." She wasn't giving me a stock tip — she was just talking about her job.
+
+When Western Digital spun off SanDisk in February 2025, I noticed. Nobody in my WhatsApp groups was talking about it. I put in $2,000 at the IPO price of $48.60.
+
+I didn't have a sophisticated thesis. I just trusted that storage demand was real, and that a company focused entirely on that one problem might do better on its own.
+
+I've been wrong plenty of other times. But this time, paying attention to the world around me instead of financial Twitter worked out.`,
+    lesson: "The best edge ordinary investors have is noticing real-world signals before they show up in analyst reports.",
+    date: "June 2026",
+    comments: [
+      { author: "Suresh M.", avatar: "S", text: "This is exactly the kind of story I needed to read. We all have people around us with industry knowledge. We just don't ask.", time: "3 days ago" }
+    ]
+  },
+  {
+    id: 3, type: "mixed", author: "Anonymous", ticker: "Multiple",
+    title: "I made $40K and lost $38K in the same year and learned the same lesson twice",
+    excerpt: "H-1B stress, a hot market, and a Robinhood app on my phone. Not a good combination. I should have just indexed.",
+    full: `2021 was my first full year in the US. I had a good job, low expenses, and too much time during COVID. I started investing seriously for the first time.
+
+First half of the year: everything I touched went up. I made $40,000 on meme stocks, some tech plays, a few random biotech gambles. I genuinely believed I was good at this.
+
+Second half: I got aggressive. I started using margin. I concentrated into a few names. By December I had given back $38,000.
+
+The lesson both times was the same one, just from different angles: I didn't know what I was doing, and the market was kind enough to show me both sides of that.
+
+The win taught me I was smart. The loss taught me the win was mostly luck. I wish the loss had come first — it would have been cheaper.`,
+    lesson: "A winning streak in a bull market is not evidence of skill. It's evidence that you were in the right place at the right time.",
+    date: "May 2026",
+    comments: []
+  }
+];
+
+// ─── QUESTIONS DATA ──────────────────────────────────────────────────────────
+// Each question: { id, status ('answered'|'open'), author, category, question,
+//                  context, answer, answerer, date, comments[] }
+const QUESTIONS = [
+  {
+    id: 101, status: "answered", author: "Anonymous",
+    category: "Tax & Filing",
+    question: "Do I pay US tax on money I earn in India while on H-1B?",
+    context: "I have some fixed deposits in India from before I moved here. My parents also transfer me money sometimes. Do I need to report any of this?",
+    answer: "If you're on H-1B and meet the Substantial Presence Test, the US taxes your worldwide income — including Indian FD interest. Gifts from parents (like transfers) are generally not taxable income for you, but may require an FBAR or Form 8938 filing if your foreign accounts exceed certain thresholds ($10K aggregate for FBAR). This is one area where a CPA who specializes in NRI taxes is worth every dollar — the rules are specific and the penalties for non-filing are severe.",
+    answerer: "TeluguBrew (educational overview — not tax advice)",
+    date: "June 2026",
+    comments: [
+      { author: "Karthik V.", avatar: "K", text: "The FBAR threshold caught me off guard my first year. Definitely get a CPA for this one.", time: "1 day ago" }
+    ]
+  },
+  {
+    id: 102, status: "answered", author: "Deepa R.",
+    category: "General Investing",
+    question: "What's the actual difference between a Roth IRA and a 401(k)? My manager at work said to max both but I don't understand why.",
+    context: "I'm 29, been in the US 2 years, making around $120K. HR kept talking about pre-tax and post-tax and I nodded but I was completely lost.",
+    answer: "Think of it this way: 401(k) is pre-tax money (you pay tax later when you withdraw in retirement). Roth IRA is post-tax money (you pay tax now, but it grows completely tax-free and you never pay tax on it again). At 29 on H-1B, the general logic is: Roth IRA is often better when you're younger because your tax rate is likely lower now than it will be at retirement. 401(k) is still valuable, especially if your employer matches — that match is free money. Max the 401(k) match first, then Roth IRA, then additional 401(k) if you can.",
+    answerer: "TeluguBrew (educational overview — not financial advice)",
+    date: "May 2026",
+    comments: [
+      { author: "Anonymous", avatar: "?", text: "The 'pay tax now vs later' framing finally made this click for me after 3 years of confusion. Thank you.", time: "5 days ago" },
+      { author: "Anand P.", avatar: "A", text: "One thing to add — check if your Roth IRA eligibility phases out at your income level. There are income limits.", time: "4 days ago" }
+    ]
+  },
+  {
+    id: 103, status: "open", author: "Anonymous",
+    category: "NRI-Specific",
+    question: "Should I keep my NRE account or convert it once I get my green card?",
+    context: "I've been sending money home to an NRE account for 3 years. Now I'm getting my green card soon and someone told me NRE accounts are only for NRIs. Not sure what happens.",
+    answer: null, answerer: null,
+    date: "June 2026",
+    comments: []
+  },
+  {
+    id: 104, status: "open", author: "Meera S.",
+    category: "Markets",
+    question: "I keep hearing about 'options' but I'm scared to try them. What's the simplest way to understand what they actually are?",
+    context: "Everyone in my office talks about buying calls and puts. I understand stocks but options feel like a completely different language.",
+    answer: null, answerer: null,
+    date: "June 2026",
+    comments: []
+  }
+];
+
+// ─── Tab switching ───────────────────────────────────────────────────────────
+function switchTab(tab) {
+  const isConf = tab === 'confessions';
+  document.getElementById('panel-confessions').style.display = isConf ? '' : 'none';
+  document.getElementById('panel-questions').style.display  = isConf ? 'none' : '';
+  document.getElementById('tab-confessions').classList.toggle('active', isConf);
+  document.getElementById('tab-questions').classList.toggle('active', !isConf);
+}
+
+// ─── Confession filters & render ─────────────────────────────────────────────
+function typeLabel(type) {
+  return {
+    win:   { text:'WIN',   color:'var(--green)', bg:'rgba(52,211,153,0.1)' },
+    loss:  { text:'LOSS',  color:'#E05555',      bg:'rgba(224,85,85,0.1)' },
+    mixed: { text:'MIXED', color:'var(--gold)',   bg:'rgba(255,179,71,0.1)' },
+  }[type];
+}
+
+function filterStories(type, btn) {
+  document.querySelectorAll('#panel-confessions .filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderStories(type === 'all' ? STORIES : STORIES.filter(s => s.type === type));
+}
+
+function renderStories(list) {
+  const el = document.getElementById('stories-container');
+  if (!list.length) {
+    el.innerHTML = '<div class="empty-state"><h3>No stories in this category yet</h3><p>Be the first to share one.</p></div>';
+    return;
+  }
+  el.innerHTML = list.map(s => {
+    const tl = typeLabel(s.type);
+    return `<article class="story-card ${s.type}" onclick="openStoryModal(${s.id})">
+      <div class="story-meta">
+        <span class="story-type" style="color:${tl.color};background:${tl.bg}">${tl.text}</span>
+        <span class="story-author">${s.author}</span>
+        <span class="story-ticker">${s.ticker}</span>
+      </div>
+      <h3>${s.title}</h3>
+      <p class="story-excerpt">${s.excerpt}</p>
+      <div class="story-lesson">
+        <div class="label">The Lesson</div>
+        <p>${s.lesson}</p>
+      </div>
+      <div class="card-footer">
+        <span class="date">${s.date}</span>
+        <span class="comments">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          ${s.comments.length}
+        </span>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+// ─── Question filters & render ────────────────────────────────────────────────
+const CAT_COLORS = {
+  'Tax & Filing':       'var(--gold)',
+  'General Investing':  'var(--green)',
+  'NRI-Specific':       'var(--mango)',
+  'Markets':            'var(--purple)',
+  'Visa & Money':       'var(--teal)',
+  'Other':              'var(--text-dim)',
+};
+
+function filterQuestions(type, btn) {
+  document.querySelectorAll('#panel-questions .filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderQuestions(type === 'all' ? QUESTIONS : QUESTIONS.filter(q => q.status === type));
+}
+
+function renderQuestions(list) {
+  const el = document.getElementById('questions-container');
+  if (!list.length) {
+    el.innerHTML = '<div class="empty-state"><h3>No questions here yet</h3><p>Ask the first one.</p></div>';
+    return;
+  }
+  el.innerHTML = list.map(q => {
+    const catColor = CAT_COLORS[q.category] || 'var(--text-dim)';
+    const answerHTML = q.answer
+      ? `<div class="best-answer">
+           <div class="label">Best Answer</div>
+           <p>${q.answer.length > 180 ? q.answer.slice(0,180) + '...' : q.answer}</p>
+           <div class="answerer">${q.answerer}</div>
+         </div>`
+      : `<div style="background:rgba(129,140,248,0.05);border-left:3px solid rgba(129,140,248,0.3);padding:12px 16px;border-radius:0 8px 8px 0">
+           <div style="font-size:10px;font-weight:700;color:var(--purple);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px">OPEN FOR COMMUNITY</div>
+           <p style="font-size:13px;color:var(--text-dim)">No answer yet — be the first to respond in the comments.</p>
+         </div>`;
+    return `<article class="question-card ${q.status}" onclick="openQuestionModal(${q.id})">
+      <div class="q-meta">
+        <span class="q-status ${q.status}">${q.status === 'answered' ? '✓ Answered' : 'Open'}</span>
+        <span class="q-cat" style="color:${catColor}">${q.category}</span>
+        <span class="q-author">${q.author}</span>
+      </div>
+      <h3>${q.question}</h3>
+      ${q.context ? `<p class="q-context">${q.context}</p>` : ''}
+      ${answerHTML}
+      <div class="card-footer">
+        <span class="date">${q.date}</span>
+        <span class="comments">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          ${q.comments.length}
+        </span>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+// ─── Story modal ──────────────────────────────────────────────────────────────
+function openStoryModal(id) {
+  const s = STORIES.find(x => x.id === id);
+  if (!s) return;
+  const tl = typeLabel(s.type);
+  document.getElementById('modal-inner').innerHTML = `
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:4px;text-transform:uppercase;color:${tl.color};background:${tl.bg}">${tl.text}</span>
+      <span style="font-size:13px;color:var(--text-dim)">${s.author}</span>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text-dim);margin-left:auto">${s.ticker}</span>
+    </div>
+    <h2>${s.title}</h2>
+    <div class="full-body">${s.full}</div>
+    <div class="highlight-box" style="background:rgba(255,107,53,0.06);border-left:3px solid var(--mango)">
+      <div class="label" style="color:var(--mango)">The Lesson</div>
+      <p>${s.lesson}</p>
+    </div>
+    ${commentsHTML(s.comments)}`;
+  openOverlay();
+}
+
+// ─── Question modal ───────────────────────────────────────────────────────────
+function openQuestionModal(id) {
+  const q = QUESTIONS.find(x => x.id === id);
+  if (!q) return;
+  const catColor = CAT_COLORS[q.category] || 'var(--text-dim)';
+  const answerBlock = q.answer
+    ? `<div class="highlight-box" style="background:rgba(0,201,167,0.06);border-left:3px solid var(--teal);margin-top:24px">
+         <div class="label" style="color:var(--teal)">Answer</div>
+         <p>${q.answer}</p>
+         <div style="font-size:12px;color:var(--text-dim);margin-top:8px">${q.answerer}</div>
+       </div>`
+    : `<div style="background:rgba(129,140,248,0.05);border-left:3px solid rgba(129,140,248,0.3);padding:16px 20px;border-radius:0 10px 10px 0;margin-top:24px">
+         <div style="font-size:11px;font-weight:700;color:var(--purple);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px">Open for Community</div>
+         <p style="font-size:15px;color:var(--text-dim)">No answer yet. Share what you know in the comments below.</p>
+       </div>`;
+  document.getElementById('modal-inner').innerHTML = `
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:4px;color:${q.status==='answered'?'var(--teal)':'var(--purple)'};background:${q.status==='answered'?'rgba(0,201,167,0.1)':'rgba(129,140,248,0.12)'}">${q.status==='answered'?'✓ Answered':'Open'}</span>
+      <span style="font-size:12px;color:${catColor};background:rgba(255,255,255,0.04);padding:2px 8px;border-radius:4px">${q.category}</span>
+      <span style="font-size:13px;color:var(--text-dim);margin-left:auto">${q.author}</span>
+    </div>
+    <h2>${q.question}</h2>
+    ${q.context ? `<div class="full-body">${q.context}</div>` : ''}
+    ${answerBlock}
+    ${commentsHTML(q.comments)}`;
+  openOverlay();
+}
+
+// ─── Shared comments template ────────────────────────────────────────────────
+function commentsHTML(comments) {
+  const items = comments.length
+    ? comments.map(c => `<div class="comment-item">
+        <div class="comment-avatar">${c.avatar}</div>
+        <div class="comment-body">
+          <div class="comment-author">${c.author}</div>
+          <div class="comment-text">${c.text}</div>
+          <div class="comment-time">${c.time}</div>
+        </div>
+      </div>`).join('')
+    : `<p style="color:var(--text-dim);font-size:13px">No comments yet. Be the first.</p>`;
+  return `<div class="comments-section">
+    <h4>${comments.length} Comment${comments.length !== 1 ? 's' : ''}</h4>
+    ${items}
+    <div class="comment-form">
+      <textarea class="comment-input" placeholder="Share your thoughts, experience, or answer..."></textarea>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:8px">
+        <button class="comment-submit">Post Comment</button>
+        <p class="comment-note">Comments are moderated before appearing.</p>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ─── Modal helpers ────────────────────────────────────────────────────────────
+function openOverlay() {
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModalBtn();
+}
+function closeModalBtn() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalBtn(); });
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+renderStories(STORIES);
+renderQuestions(QUESTIONS);
+document.getElementById('story-count').textContent = STORIES.length;
+document.getElementById('q-count').textContent = QUESTIONS.length;
+document.getElementById('conf-badge').textContent = STORIES.length;
+document.getElementById('q-badge').textContent = QUESTIONS.length;
+</script>
+</body>
+</html>
